@@ -1,0 +1,51 @@
+{
+    "channel": {
+      "total": "1",
+      "title": "우리말샘 개발 지원(Open API) - 사전 내용 검색",
+      "description": "우리말샘 개발 지원(Open API) - 사전 내용 검색 결과",
+      "item": {
+        "wordInfo": {
+          "pronunciation_info": [
+            "군ː담"
+          ],
+          "word_unit": "어휘",
+          "word": "군-담",
+          "original_language_info": [
+            {
+              "CODE_SMBL": "고유어",
+              "original_language": "군",
+              "language_type": "고유어",
+              "ORGLAN_NATCODE": 0,
+              "ORG_LANGUAGE": "군"
+            },
+            {
+              "CODE_SMBL": "한자",
+              "original_language": "談",
+              "language_type": "한자",
+              "ORGLAN_NATCODE": 32,
+              "ORG_LANGUAGE": "談"
+            }
+          ],
+          "word_type": "혼종어"
+        },
+        "group_order": 1,
+        "group_code": 112753,
+        "senseInfo": {
+          "definition": "쓸데없이 늘어놓는 이야기.",
+          "sense_no": "001",
+          "type": "일반어",
+          "example_info": [
+            {
+              "source": "박경리, 토지",
+              "example": "오밤중이라도 나그네가 들면 {군담} 없이 술상 밥상 다 차려 냈고…."
+            }
+          ],
+          "definition_original": "쓸데없이 늘어놓는 이야기.",
+          "pos": "명사"
+        },
+        "target_code": 100067
+      },
+      "link": "http://opendict.korean.go.kr/dictionary/view?sense_no=100067",
+      "lastbuilddate": "20220830192804"
+    }
+  }
