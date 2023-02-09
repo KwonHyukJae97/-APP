@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import Background from '../components/Background';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
@@ -16,43 +16,44 @@ type Props = {
 
 const RegisterScreen = ({ navigation }: Props) => {
   const [username, setUsername] = useState(''),
-      [email, setEmail] = useState(''),
-      [password, setPassword] = useState(''),
-      [phone, setPhone] = useState(''),
-      [age, setAge] = useState(''),
-      [address, setAddress] = useState('')
+    [email, setEmail] = useState(''),
+    [password, setPassword] = useState(''),
+    [phone, setPhone] = useState(''),
+    [age, setAge] = useState(''),
+    [address, setAddress] = useState('')
 
   const _onSignUpPressed = () => {
-      // if (confirm('가입 하시겠습니까?')) {
-          axios
-          .post('http://localhost:3000/auth/signup', {
-              username,
-              password,
-              email,
-              phone,
-              age,
-              address
-          })
-          .then((response) => {
-                  console.log("usernamelog: ", response.data.username)
-                  console.log("passwordlog: ", response.data.password)
-                  console.log("emaillog: ", response.data.email)
-                  console.log("phonelog: ", response.data.phone)
-                  console.log("agelog: ", response.data.age)
-                  console.log("addresslog: ", response.data.address)
-                  alert('가입이 완료되었습니다.')
-                  navigation.navigate('LoginScreen')
-          })
-          .catch((err) => {
-                  console.log("Fail Insert:", err)
-                  alert('잘못된 방식입니다. 다시 시도해주세요.')
-                  })
-                  console.log('Success Insert')
-                  // navigation.navigate('LoginScreen')
-      // }
+    // if (confirm('가입 하시겠습니까?')) {
+    axios
+      .post('http://localhost:3000/auth/signup', {
+        username,
+        password,
+        email,
+        phone,
+        age,
+        address
+      })
+      .then((response) => {
+        console.log("usernamelog: ", response.data.username)
+        console.log("passwordlog: ", response.data.password)
+        console.log("emaillog: ", response.data.email)
+        console.log("phonelog: ", response.data.phone)
+        console.log("agelog: ", response.data.age)
+        console.log("addresslog: ", response.data.address)
+        alert('가입이 완료되었습니다.')
+        navigation.navigate('LoginScreen')
+      })
+      .catch((err) => {
+        console.log("Fail Insert:", err)
+        alert('잘못된 방식입니다. 다시 시도해주세요.')
+      })
+    console.log('Success Insert')
+    // navigation.navigate('LoginScreen')
+    // }
   }
 
   return (
+    <ScrollView>
     <Background>
       <BackButton goBack={() => navigation.navigate('HomeScreen')} />
 
@@ -93,7 +94,7 @@ const RegisterScreen = ({ navigation }: Props) => {
         onChangeText={setPhone}
       />
 
-        <TextInput
+      <TextInput
         label="Age"
         returnKeyType="next"
         value={age}
@@ -112,12 +113,13 @@ const RegisterScreen = ({ navigation }: Props) => {
       </Button>
 
       <View style={styles.row}>
-        <Text style={styles.label}>Already have an account? </Text>
+        <Text style={styles.label}>이미 회원이신가요? </Text>
         <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
           <Text style={styles.link}>Login</Text>
         </TouchableOpacity>
       </View>
     </Background>
+    </ScrollView>
   );
 };
 

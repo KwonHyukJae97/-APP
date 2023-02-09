@@ -18,7 +18,7 @@ const LoginScreen = ({ navigation }: Props) => {
   const [password, setPassword] = useState('');
 
   const _onLoginPressed = () => {
-      axios
+    axios
       .post('http://localhost:3000/auth/signin', {
         email,
         password
@@ -33,7 +33,7 @@ const LoginScreen = ({ navigation }: Props) => {
         alert('Email 또는 Password가 다릅니다.')
         // navigation.navigate('LoginScreen');
       })
-    };
+  };
 
   return (
     <Background>
